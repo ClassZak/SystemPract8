@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemPract8", "SystemPract8\SystemPract8.csproj", "{B0D3A24E-06F2-4409-BF49-0863296C5894}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{270700AD-0E18-4285-8755-BB499FC374E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B0D3A24E-06F2-4409-BF49-0863296C5894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0D3A24E-06F2-4409-BF49-0863296C5894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0D3A24E-06F2-4409-BF49-0863296C5894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{270700AD-0E18-4285-8755-BB499FC374E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270700AD-0E18-4285-8755-BB499FC374E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270700AD-0E18-4285-8755-BB499FC374E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270700AD-0E18-4285-8755-BB499FC374E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
