@@ -126,6 +126,22 @@ namespace SystemPract8
             foreach(DirectoryInfo d in storage.GetDirectories())
                 HideFiles(d);
         }
+        static void DeleteDirectory(DirectoryInfo storage)
+        {
+            foreach(DirectoryInfo d in storage.GetDirectories())
+                DeleteDirectory(d);
+            foreach(FileInfo f in storage.GetFiles())
+                f.Delete();
+            storage.Delete();
+        }
+        static void DeleteSubdirectories(DirectoryInfo storage, bool deleteFiles=true)
+        {
+            foreach (DirectoryInfo d in storage.GetDirectories())
+                DeleteDirectory(d);
+            if(deleteFiles)
+            foreach (FileInfo f in storage.GetFiles())
+                f.Delete();
+        }
         static void Main(string[] args)
         {
             try
@@ -164,12 +180,32 @@ namespace SystemPract8
                 Console.WriteLine("Для продолжения нажмите клавишу . . .");
                 Console.ReadKey(false);
                 Console.ResetColor();
+
+
                 Console.Clear();
                 HideFiles(dir1);
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Директория после изменений:");
                 Console.ResetColor();
                 ReadDirectoryAttributes(dir1);
+                
+
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.Write("Удаляем поддиректории ");
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine(path);
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("Для продолжения нажмите клавишу . . .");
+                Console.ReadKey(false);
+                Console.ResetColor();
+
+                Console.Clear();
+                DeleteSubdirectories(dir1);
+                Console.Write("Директории ");
+                Console.ForegroundColor=ConsoleColor.DarkGray;
+                Console.Write(path);
+                Console.ResetColor();
+                Console.WriteLine(" удалены");
 
             }
             catch(Exception ex)
@@ -178,6 +214,7 @@ namespace SystemPract8
                 Console.WriteLine(ex.Message);
                 Console.ResetColor();
             }
+            Console.WriteLine("Для продолжения нажмите клавишу . . .");
             Console.ReadKey(false);
         }
     }
